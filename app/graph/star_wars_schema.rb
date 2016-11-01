@@ -1,5 +1,6 @@
 StarWarsSchema = GraphQL::Schema.define do
   query QueryType
+  mutation MutationType
 
   resolve_type ->(obj, ctx) do
     { Droid => DroidType, Human => HumanType }.fetch(obj.class)
